@@ -1,0 +1,33 @@
+
+
+java_sdk_library_import {
+    name: "framework-statsd",
+    owner: "google",
+    prefer: false,
+    shared_library: false,
+    apex_available: [
+        "com.android.os.statsd",
+        "test_com.android.os.statsd",
+    ],
+    public: {
+        jars: ["current/public/framework-statsd.jar"],
+        stub_srcs: ["current/public/framework-statsd.srcjar"],
+        current_api: "current/public/framework-statsd.txt",
+        removed_api: "current/public/framework-statsd-removed.txt",
+        sdk_version: "module_current",
+    },
+    system: {
+        jars: ["current/system/framework-statsd.jar"],
+        stub_srcs: ["current/system/framework-statsd.srcjar"],
+        current_api: "current/system/framework-statsd.txt",
+        removed_api: "current/system/framework-statsd-removed.txt",
+        sdk_version: "module_current",
+    },
+    module_lib: {
+        jars: ["current/module_lib/framework-statsd.jar"],
+        stub_srcs: ["current/module_lib/framework-statsd.srcjar"],
+        current_api: "current/module_lib/framework-statsd.txt",
+        removed_api: "current/module_lib/framework-statsd-removed.txt",
+        sdk_version: "module_current",
+    },
+}

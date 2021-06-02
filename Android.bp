@@ -99,7 +99,7 @@ cc_prebuilt_library_shared {
     licenses: ["statsd-module-sdk_Android-Apache-2.0@current"],
     installable: false,
     stl: "libc++_static",
-    compile_multilib: "32",
+    compile_multilib: "both",
     export_include_dirs: ["include/packages/modules/StatsD/lib/libstatssocket/include"],
     stubs: {
         versions: [
@@ -108,6 +108,15 @@ cc_prebuilt_library_shared {
         ],
     },
     arch: {
+        arm64: {
+            srcs: ["arm64/lib/libstatssocket.so"],
+        },
+        x86_64: {
+            srcs: ["x86_64/lib/libstatssocket.so"],
+        },
+        arm: {
+            srcs: ["arm/lib/libstatssocket.so"],
+        },
         x86: {
             srcs: ["x86/lib/libstatssocket.so"],
         },
@@ -125,7 +134,7 @@ cc_prebuilt_library_shared {
     ],
     licenses: ["statsd-module-sdk_Android-Apache-2.0"],
     stl: "libc++_static",
-    compile_multilib: "32",
+    compile_multilib: "both",
     export_include_dirs: ["include/packages/modules/StatsD/lib/libstatssocket/include"],
     stubs: {
         versions: [
@@ -134,6 +143,15 @@ cc_prebuilt_library_shared {
         ],
     },
     arch: {
+        arm64: {
+            srcs: ["arm64/lib/libstatssocket.so"],
+        },
+        x86_64: {
+            srcs: ["x86_64/lib/libstatssocket.so"],
+        },
+        arm: {
+            srcs: ["arm/lib/libstatssocket.so"],
+        },
         x86: {
             srcs: ["x86/lib/libstatssocket.so"],
         },
@@ -143,7 +161,6 @@ cc_prebuilt_library_shared {
 sdk_snapshot {
     name: "statsd-module-sdk@current",
     visibility: ["//visibility:public"],
-    compile_multilib: "32",
     java_sdk_libs: ["statsd-module-sdk_framework-statsd@current"],
     native_shared_libs: ["statsd-module-sdk_libstatssocket@current"],
 }

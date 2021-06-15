@@ -7,23 +7,23 @@ package {
 }
 
 prebuilt_bootclasspath_fragment {
-    name: "com.android.os.statsd-bootclasspath-fragment",
-    prefer: false,
+    name: "statsd-module-sdk_com.android.os.statsd-bootclasspath-fragment@1",
+    sdk_member_name: "com.android.os.statsd-bootclasspath-fragment",
     visibility: ["//visibility:public"],
     apex_available: ["com.android.os.statsd"],
-    licenses: ["statsd-module-sdk_Android-Apache-2.0"],
-    contents: ["framework-statsd"],
+    licenses: ["statsd-module-sdk_Android-Apache-2.0@1"],
+    contents: ["statsd-module-sdk_framework-statsd@1"],
 }
 
 java_sdk_library_import {
-    name: "framework-statsd",
-    prefer: false,
+    name: "statsd-module-sdk_framework-statsd@1",
+    sdk_member_name: "framework-statsd",
     visibility: ["//visibility:public"],
     apex_available: [
         "com.android.os.statsd",
         "test_com.android.os.statsd",
     ],
-    licenses: ["statsd-module-sdk_Android-Apache-2.0"],
+    licenses: ["statsd-module-sdk_Android-Apache-2.0@1"],
     shared_library: false,
     public: {
         jars: ["sdk_library/public/framework-statsd-stubs.jar"],
@@ -49,22 +49,24 @@ java_sdk_library_import {
 }
 
 license {
-    name: "statsd-module-sdk_Android-Apache-2.0",
+    name: "statsd-module-sdk_Android-Apache-2.0@1",
+    sdk_member_name: "Android-Apache-2.0",
     visibility: ["//visibility:private"],
     license_kinds: ["SPDX-license-identifier-Apache-2.0"],
     license_text: ["licenses/build/soong/licenses/LICENSE"],
 }
 
 cc_prebuilt_library_shared {
-    name: "libstatssocket",
-    prefer: false,
+    name: "statsd-module-sdk_libstatssocket@1",
+    sdk_member_name: "libstatssocket",
     visibility: ["//visibility:public"],
     apex_available: [
         "com.android.bluetooth.updatable",
         "com.android.os.statsd",
         "test_com.android.os.statsd",
     ],
-    licenses: ["statsd-module-sdk_Android-Apache-2.0"],
+    licenses: ["statsd-module-sdk_Android-Apache-2.0@1"],
+    installable: false,
     stl: "libc++_static",
     compile_multilib: "both",
     export_include_dirs: ["include/packages/modules/StatsD/lib/libstatssocket/include"],
@@ -88,4 +90,12 @@ cc_prebuilt_library_shared {
             srcs: ["x86/lib/libstatssocket.so"],
         },
     },
+}
+
+sdk_snapshot {
+    name: "statsd-module-sdk@1",
+    visibility: ["//visibility:public"],
+    bootclasspath_fragments: ["statsd-module-sdk_com.android.os.statsd-bootclasspath-fragment@1"],
+    java_sdk_libs: ["statsd-module-sdk_framework-statsd@1"],
+    native_shared_libs: ["statsd-module-sdk_libstatssocket@1"],
 }

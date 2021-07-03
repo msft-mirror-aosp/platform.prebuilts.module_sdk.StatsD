@@ -13,6 +13,14 @@ prebuilt_bootclasspath_fragment {
     apex_available: ["com.android.os.statsd"],
     licenses: ["statsd-module-sdk_Android-Apache-2.0@1"],
     contents: ["statsd-module-sdk_framework-statsd@1"],
+    hidden_api: {
+        max_target_o_low_priority: ["hiddenapi/hiddenapi-max-target-o-low-priority.txt"],
+        stub_flags: "hiddenapi/stub-flags.csv",
+        annotation_flags: "hiddenapi/annotation-flags.csv",
+        metadata: "hiddenapi/metadata.csv",
+        index: "hiddenapi/index.csv",
+        all_flags: "hiddenapi/all-flags.csv",
+    },
 }
 
 java_sdk_library_import {

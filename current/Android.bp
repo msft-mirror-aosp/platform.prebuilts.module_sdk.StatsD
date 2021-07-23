@@ -50,6 +50,12 @@ java_sdk_library_import {
     ],
     licenses: ["statsd-module-sdk_Android-Apache-2.0@current"],
     shared_library: false,
+    permitted_packages: [
+        "android.app",
+        "android.os",
+        "android.util",
+        "com.android.internal.statsd",
+    ],
     public: {
         jars: ["sdk_library/public/framework-statsd-stubs.jar"],
         stub_srcs: ["sdk_library/public/framework-statsd.srcjar"],
@@ -83,6 +89,12 @@ java_sdk_library_import {
     ],
     licenses: ["statsd-module-sdk_Android-Apache-2.0"],
     shared_library: false,
+    permitted_packages: [
+        "android.app",
+        "android.os",
+        "android.util",
+        "com.android.internal.statsd",
+    ],
     public: {
         jars: ["sdk_library/public/framework-statsd-stubs.jar"],
         stub_srcs: ["sdk_library/public/framework-statsd.srcjar"],

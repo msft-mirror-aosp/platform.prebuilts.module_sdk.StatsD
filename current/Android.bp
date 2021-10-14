@@ -55,6 +55,7 @@ java_sdk_library_import {
         stub_srcs: ["sdk_library/public/framework-statsd.srcjar"],
         current_api: "sdk_library/public/framework-statsd.txt",
         removed_api: "sdk_library/public/framework-statsd-removed.txt",
+        annotations: "sdk_library/public/framework-statsd_annotations.zip",
         sdk_version: "module_current",
     },
     system: {
@@ -62,6 +63,7 @@ java_sdk_library_import {
         stub_srcs: ["sdk_library/system/framework-statsd.srcjar"],
         current_api: "sdk_library/system/framework-statsd.txt",
         removed_api: "sdk_library/system/framework-statsd-removed.txt",
+        annotations: "sdk_library/system/framework-statsd_annotations.zip",
         sdk_version: "module_current",
     },
     module_lib: {
@@ -69,6 +71,7 @@ java_sdk_library_import {
         stub_srcs: ["sdk_library/module-lib/framework-statsd.srcjar"],
         current_api: "sdk_library/module-lib/framework-statsd.txt",
         removed_api: "sdk_library/module-lib/framework-statsd-removed.txt",
+        annotations: "sdk_library/module-lib/framework-statsd_annotations.zip",
         sdk_version: "module_current",
     },
 }
@@ -88,6 +91,7 @@ java_sdk_library_import {
         stub_srcs: ["sdk_library/public/framework-statsd.srcjar"],
         current_api: "sdk_library/public/framework-statsd.txt",
         removed_api: "sdk_library/public/framework-statsd-removed.txt",
+        annotations: "sdk_library/public/framework-statsd_annotations.zip",
         sdk_version: "module_current",
     },
     system: {
@@ -95,6 +99,7 @@ java_sdk_library_import {
         stub_srcs: ["sdk_library/system/framework-statsd.srcjar"],
         current_api: "sdk_library/system/framework-statsd.txt",
         removed_api: "sdk_library/system/framework-statsd-removed.txt",
+        annotations: "sdk_library/system/framework-statsd_annotations.zip",
         sdk_version: "module_current",
     },
     module_lib: {
@@ -102,6 +107,7 @@ java_sdk_library_import {
         stub_srcs: ["sdk_library/module-lib/framework-statsd.srcjar"],
         current_api: "sdk_library/module-lib/framework-statsd.txt",
         removed_api: "sdk_library/module-lib/framework-statsd-removed.txt",
+        annotations: "sdk_library/module-lib/framework-statsd_annotations.zip",
         sdk_version: "module_current",
     },
 }

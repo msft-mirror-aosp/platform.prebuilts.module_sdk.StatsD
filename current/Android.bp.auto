@@ -6,15 +6,6 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
-soong_config_module_type_import {
-    from: "packages/modules/common/Android.bp",
-    module_types: [
-        "module_cc_prebuilt_library_shared",
-        "module_java_sdk_library_import",
-        "module_prebuilt_bootclasspath_fragment",
-    ],
-}
-
 prebuilt_bootclasspath_fragment {
     name: "statsd-module-sdk_com.android.os.statsd-bootclasspath-fragment@current",
     sdk_member_name: "com.android.os.statsd-bootclasspath-fragment",
@@ -32,14 +23,9 @@ prebuilt_bootclasspath_fragment {
     },
 }
 
-module_prebuilt_bootclasspath_fragment {
+prebuilt_bootclasspath_fragment {
     name: "com.android.os.statsd-bootclasspath-fragment",
-    prefer: true,
-    soong_config_variables: {
-        module_build_from_source: {
-            prefer: false,
-        },
-    },
+    prefer: false,
     visibility: ["//visibility:public"],
     apex_available: ["com.android.os.statsd"],
     licenses: ["statsd-module-sdk_Android-Apache-2.0"],
@@ -93,14 +79,9 @@ java_sdk_library_import {
     },
 }
 
-module_java_sdk_library_import {
+java_sdk_library_import {
     name: "framework-statsd",
-    prefer: true,
-    soong_config_variables: {
-        module_build_from_source: {
-            prefer: false,
-        },
-    },
+    prefer: false,
     visibility: ["//visibility:public"],
     apex_available: [
         "com.android.os.statsd",
@@ -188,14 +169,9 @@ cc_prebuilt_library_shared {
     },
 }
 
-module_cc_prebuilt_library_shared {
+cc_prebuilt_library_shared {
     name: "libstatssocket",
-    prefer: true,
-    soong_config_variables: {
-        module_build_from_source: {
-            prefer: false,
-        },
-    },
+    prefer: false,
     visibility: ["//visibility:public"],
     apex_available: [
         "com.android.bluetooth.updatable",

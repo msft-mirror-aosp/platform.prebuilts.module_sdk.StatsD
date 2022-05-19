@@ -212,7 +212,6 @@ cc_prebuilt_library_shared {
     sdk_member_name: "libstatssocket",
     visibility: ["//visibility:public"],
     apex_available: [
-        "com.android.bluetooth",
         "com.android.os.statsd",
         "test_com.android.os.statsd",
     ],
@@ -254,7 +253,6 @@ module_cc_prebuilt_library_shared {
     },
     visibility: ["//visibility:public"],
     apex_available: [
-        "com.android.bluetooth",
         "com.android.os.statsd",
         "test_com.android.os.statsd",
     ],

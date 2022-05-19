@@ -119,6 +119,10 @@ Landroid/os/StatsDimensionsValueParcel$1;->newArray(I)[Ljava/lang/Object;,public
 Landroid/os/StatsDimensionsValueParcel;->describeContents()I,public-api,sdk,system-api,test-api
 Landroid/os/StatsDimensionsValueParcel;->writeToParcel(Landroid/os/Parcel;I)V,public-api,sdk,system-api,test-api
 Landroid/os/StatsFrameworkInitializer$$ExternalSyntheticLambda0;->createService(Landroid/content/Context;)Ljava/lang/Object;,sdk,system-api,test-api
+Landroid/util/PropertyParcel$1;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;,public-api,sdk,system-api,test-api
+Landroid/util/PropertyParcel$1;->newArray(I)[Ljava/lang/Object;,public-api,sdk,system-api,test-api
+Landroid/util/PropertyParcel;->describeContents()I,public-api,sdk,system-api,test-api
+Landroid/util/PropertyParcel;->writeToParcel(Landroid/os/Parcel;I)V,public-api,sdk,system-api,test-api
 Landroid/util/StatsEvent$Builder;->addBooleanAnnotation(BZ)Landroid/util/StatsEvent$Builder;,sdk,system-api,test-api
 Landroid/util/StatsEvent$Builder;->addIntAnnotation(BI)Landroid/util/StatsEvent$Builder;,sdk,system-api,test-api
 Landroid/util/StatsEvent$Builder;->build()Landroid/util/StatsEvent;,sdk,system-api,test-api

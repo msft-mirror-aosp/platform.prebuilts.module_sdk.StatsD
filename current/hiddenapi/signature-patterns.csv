@@ -8,7 +8,8 @@ android/os/IStatsd
 android/os/StatsDimensionsValue
 android/os/StatsDimensionsValueParcel
 android/os/StatsFrameworkInitializer
+android/util/PropertyParcel
 android/util/StatsEvent
 android/util/StatsEventParcel
 android/util/StatsLog
-com/android/internal/statsd/StatsdStatsLog
+com/android/internal/statsd/**

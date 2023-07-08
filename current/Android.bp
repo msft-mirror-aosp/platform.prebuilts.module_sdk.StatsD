@@ -1,5 +1,11 @@
 // This is auto-generated. DO NOT EDIT.
 
+// blueprint rules added by vendor/google/build/mainline_modules_sdks.py
+// to support coexistence.
+blueprint_package_includes {
+    match_all: ["com.android.mainline"]
+}
+
 package {
     // A default list here prevents the license LSC from adding its own list which would
     // be unnecessary as every module in the sdk already has its own licenses property.
@@ -94,6 +100,7 @@ java_import {
     ],
     licenses: ["statsd-module-sdk_Android-Apache-2.0"],
     jars: ["java_systemserver_libs/snapshot/jars/are/invalid/service-statsd.jar"],
+    min_sdk_version: "30",
 }
 
 license {
@@ -101,6 +108,44 @@ license {
     visibility: ["//visibility:private"],
     license_kinds: ["SPDX-license-identifier-Apache-2.0"],
     license_text: ["licenses/build/soong/licenses/LICENSE"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libstatspull",
+    // Do not prefer prebuilt if the Soong config variable "module_build_from_source" in namespace "ANDROID" is true.
+    use_source_config_var: {
+        config_namespace: "ANDROID",
+        var_name: "module_build_from_source",
+    },
+    visibility: ["//visibility:public"],
+    apex_available: [
+        "com.android.os.statsd",
+        "test_com.android.os.statsd",
+    ],
+    licenses: ["statsd-module-sdk_Android-Apache-2.0"],
+    stl: "libc++_static",
+    compile_multilib: "both",
+    export_include_dirs: ["include/packages/modules/StatsD/lib/libstatspull/include"],
+    stubs: {
+        versions: [
+            "30",
+            "current",
+        ],
+    },
+    arch: {
+        arm64: {
+            srcs: ["arm64/lib/libstatspull.so"],
+        },
+        x86_64: {
+            srcs: ["x86_64/lib/libstatspull.so"],
+        },
+        arm: {
+            srcs: ["arm/lib/libstatspull.so"],
+        },
+        x86: {
+            srcs: ["x86/lib/libstatspull.so"],
+        },
+    },
 }
 
 cc_prebuilt_library_shared {

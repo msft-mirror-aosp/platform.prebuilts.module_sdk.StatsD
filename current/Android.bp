@@ -1,23 +1,26 @@
 // This is auto-generated. DO NOT EDIT.
 
-// blueprint rules added by vendor/google/build/mainline_modules_sdks.py
-// to support coexistence.
-blueprint_package_includes {
-    match_all: ["com.android.mainline"]
-}
-
 package {
     // A default list here prevents the license LSC from adding its own list which would
     // be unnecessary as every module in the sdk already has its own licenses property.
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
+apex_contributions_defaults {
+    name: "statsd-module-sdk.contributions",
+    contents: [
+        "prebuilt_framework-statsd",
+        "prebuilt_libstatspull",
+        "prebuilt_libstatssocket",
+    ],
+}
+
 prebuilt_bootclasspath_fragment {
     name: "com.android.os.statsd-bootclasspath-fragment",
-    // Do not prefer prebuilt if the Soong config variable "module_build_from_source" in namespace "ANDROID" is true.
+    // Do not prefer prebuilt if the Soong config variable "source_build" in namespace "statsd_module" is true.
     use_source_config_var: {
-        config_namespace: "ANDROID",
-        var_name: "module_build_from_source",
+        config_namespace: "statsd_module",
+        var_name: "source_build",
     },
     visibility: ["//visibility:public"],
     apex_available: ["com.android.os.statsd"],
@@ -42,10 +45,10 @@ prebuilt_bootclasspath_fragment {
 
 java_sdk_library_import {
     name: "framework-statsd",
-    // Do not prefer prebuilt if the Soong config variable "module_build_from_source" in namespace "ANDROID" is true.
+    // Do not prefer prebuilt if the Soong config variable "source_build" in namespace "statsd_module" is true.
     use_source_config_var: {
-        config_namespace: "ANDROID",
-        var_name: "module_build_from_source",
+        config_namespace: "statsd_module",
+        var_name: "source_build",
     },
     visibility: ["//visibility:public"],
     apex_available: [
@@ -88,10 +91,10 @@ java_sdk_library_import {
 
 java_import {
     name: "service-statsd",
-    // Do not prefer prebuilt if the Soong config variable "module_build_from_source" in namespace "ANDROID" is true.
+    // Do not prefer prebuilt if the Soong config variable "source_build" in namespace "statsd_module" is true.
     use_source_config_var: {
-        config_namespace: "ANDROID",
-        var_name: "module_build_from_source",
+        config_namespace: "statsd_module",
+        var_name: "source_build",
     },
     visibility: ["//visibility:public"],
     apex_available: [
@@ -112,10 +115,10 @@ license {
 
 cc_prebuilt_library_shared {
     name: "libstatspull",
-    // Do not prefer prebuilt if the Soong config variable "module_build_from_source" in namespace "ANDROID" is true.
+    // Do not prefer prebuilt if the Soong config variable "source_build" in namespace "statsd_module" is true.
     use_source_config_var: {
-        config_namespace: "ANDROID",
-        var_name: "module_build_from_source",
+        config_namespace: "statsd_module",
+        var_name: "source_build",
     },
     visibility: ["//visibility:public"],
     apex_available: [
@@ -150,10 +153,10 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libstatssocket",
-    // Do not prefer prebuilt if the Soong config variable "module_build_from_source" in namespace "ANDROID" is true.
+    // Do not prefer prebuilt if the Soong config variable "source_build" in namespace "statsd_module" is true.
     use_source_config_var: {
-        config_namespace: "ANDROID",
-        var_name: "module_build_from_source",
+        config_namespace: "statsd_module",
+        var_name: "source_build",
     },
     visibility: ["//visibility:public"],
     apex_available: [
@@ -188,10 +191,10 @@ cc_prebuilt_library_shared {
 
 prebuilt_systemserverclasspath_fragment {
     name: "com.android.os.statsd-systemserverclasspath-fragment",
-    // Do not prefer prebuilt if the Soong config variable "module_build_from_source" in namespace "ANDROID" is true.
+    // Do not prefer prebuilt if the Soong config variable "source_build" in namespace "statsd_module" is true.
     use_source_config_var: {
-        config_namespace: "ANDROID",
-        var_name: "module_build_from_source",
+        config_namespace: "statsd_module",
+        var_name: "source_build",
     },
     visibility: ["//visibility:public"],
     apex_available: ["com.android.os.statsd"],

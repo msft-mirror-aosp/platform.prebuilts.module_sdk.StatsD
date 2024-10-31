@@ -106,7 +106,7 @@ cc_prebuilt_library_shared {
         "test_com.android.os.statsd",
     ],
     licenses: ["statsd-module-sdk_Android-Apache-2.0"],
-    stl: "libc++_static",
+    stl: "none",
     compile_multilib: "both",
     export_include_dirs: ["include/packages/modules/StatsD/lib/libstatspull/include"],
     stubs: {
@@ -129,6 +129,9 @@ cc_prebuilt_library_shared {
             srcs: ["x86/lib/libstatspull.so"],
         },
     },
+    strip: {
+        none: true,
+    },
 }
 
 cc_prebuilt_library_shared {
@@ -139,7 +142,7 @@ cc_prebuilt_library_shared {
         "test_com.android.os.statsd",
     ],
     licenses: ["statsd-module-sdk_Android-Apache-2.0"],
-    stl: "libc++_static",
+    stl: "none",
     compile_multilib: "both",
     export_include_dirs: ["include/packages/modules/StatsD/lib/libstatssocket/include"],
     stubs: {
@@ -161,6 +164,9 @@ cc_prebuilt_library_shared {
         x86: {
             srcs: ["x86/lib/libstatssocket.so"],
         },
+    },
+    strip: {
+        none: true,
     },
 }
 

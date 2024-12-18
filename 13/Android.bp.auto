@@ -17,6 +17,11 @@ apex_contributions_defaults {
 
 prebuilt_bootclasspath_fragment {
     name: "com.android.os.statsd-bootclasspath-fragment",
+    // Do not prefer prebuilt if the Soong config variable "source_build" in namespace "statsd_module" is true.
+    use_source_config_var: {
+        config_namespace: "statsd_module",
+        var_name: "source_build",
+    },
     visibility: ["//visibility:public"],
     apex_available: ["com.android.os.statsd"],
     licenses: ["statsd-module-sdk_Android-Apache-2.0"],
@@ -40,6 +45,11 @@ prebuilt_bootclasspath_fragment {
 
 java_sdk_library_import {
     name: "framework-statsd",
+    // Do not prefer prebuilt if the Soong config variable "source_build" in namespace "statsd_module" is true.
+    use_source_config_var: {
+        config_namespace: "statsd_module",
+        var_name: "source_build",
+    },
     visibility: ["//visibility:public"],
     apex_available: [
         "com.android.os.statsd",
@@ -81,6 +91,11 @@ java_sdk_library_import {
 
 java_import {
     name: "service-statsd",
+    // Do not prefer prebuilt if the Soong config variable "source_build" in namespace "statsd_module" is true.
+    use_source_config_var: {
+        config_namespace: "statsd_module",
+        var_name: "source_build",
+    },
     visibility: ["//visibility:public"],
     apex_available: [
         "com.android.os.statsd",
@@ -100,13 +115,18 @@ license {
 
 cc_prebuilt_library_shared {
     name: "libstatspull",
+    // Do not prefer prebuilt if the Soong config variable "source_build" in namespace "statsd_module" is true.
+    use_source_config_var: {
+        config_namespace: "statsd_module",
+        var_name: "source_build",
+    },
     visibility: ["//visibility:public"],
     apex_available: [
         "com.android.os.statsd",
         "test_com.android.os.statsd",
     ],
     licenses: ["statsd-module-sdk_Android-Apache-2.0"],
-    stl: "none",
+    stl: "libc++_static",
     compile_multilib: "both",
     export_include_dirs: ["include/packages/modules/StatsD/lib/libstatspull/include"],
     stubs: {
@@ -129,20 +149,22 @@ cc_prebuilt_library_shared {
             srcs: ["x86/lib/libstatspull.so"],
         },
     },
-    strip: {
-        none: true,
-    },
 }
 
 cc_prebuilt_library_shared {
     name: "libstatssocket",
+    // Do not prefer prebuilt if the Soong config variable "source_build" in namespace "statsd_module" is true.
+    use_source_config_var: {
+        config_namespace: "statsd_module",
+        var_name: "source_build",
+    },
     visibility: ["//visibility:public"],
     apex_available: [
         "com.android.os.statsd",
         "test_com.android.os.statsd",
     ],
     licenses: ["statsd-module-sdk_Android-Apache-2.0"],
-    stl: "none",
+    stl: "libc++_static",
     compile_multilib: "both",
     export_include_dirs: ["include/packages/modules/StatsD/lib/libstatssocket/include"],
     stubs: {
@@ -165,13 +187,15 @@ cc_prebuilt_library_shared {
             srcs: ["x86/lib/libstatssocket.so"],
         },
     },
-    strip: {
-        none: true,
-    },
 }
 
 prebuilt_systemserverclasspath_fragment {
     name: "com.android.os.statsd-systemserverclasspath-fragment",
+    // Do not prefer prebuilt if the Soong config variable "source_build" in namespace "statsd_module" is true.
+    use_source_config_var: {
+        config_namespace: "statsd_module",
+        var_name: "source_build",
+    },
     visibility: ["//visibility:public"],
     apex_available: ["com.android.os.statsd"],
     licenses: ["statsd-module-sdk_Android-Apache-2.0"],

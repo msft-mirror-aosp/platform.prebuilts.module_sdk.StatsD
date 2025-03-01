@@ -41,7 +41,10 @@ prebuilt_bootclasspath_fragment {
 java_sdk_library_import {
     name: "framework-statsd",
     visibility: ["//visibility:public"],
-    apex_available: ["com.android.os.statsd"],
+    apex_available: [
+        "com.android.os.statsd",
+        "test_com.android.os.statsd",
+    ],
     licenses: ["statsd-module-sdk_Android-Apache-2.0"],
     shared_library: false,
     permitted_packages: [

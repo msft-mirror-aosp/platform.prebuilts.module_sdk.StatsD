@@ -105,6 +105,7 @@ cc_prebuilt_library_shared {
             "30",
             "current",
         ],
+        symbol_file: "libstatspull.map.txt",
     },
     arch: {
         arm64: {
@@ -138,6 +139,7 @@ cc_prebuilt_library_shared {
             "30",
             "current",
         ],
+        symbol_file: "libstatssocket.map.txt",
     },
     arch: {
         arm64: {
